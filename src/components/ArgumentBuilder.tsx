@@ -265,7 +265,12 @@ const ArgumentBuilder = () => {
                                     }
                                     ${snapshot.isDragging ? 'shadow-lg scale-105 rotate-2' : ''}
                                   `}
-                                  style={provided.draggableProps.style}
+                                  style={{
+                                    ...provided.draggableProps.style,
+                                    ...(snapshot.isDragging && {
+                                      transform: `${provided.draggableProps.style?.transform} rotate(2deg)`
+                                    })
+                                  }}
                                 >
                                   <div className="flex items-start gap-2">
                                     <IconComponent className="w-5 h-5 mt-0.5 flex-shrink-0" />
@@ -342,7 +347,12 @@ const ArgumentBuilder = () => {
                                       ${component.color}
                                       ${snapshot.isDragging ? 'shadow-lg scale-105' : 'hover:shadow-md'}
                                     `}
-                                    style={provided.draggableProps.style}
+                                    style={{
+                                      ...provided.draggableProps.style,
+                                      ...(snapshot.isDragging && {
+                                        transform: provided.draggableProps.style?.transform
+                                      })
+                                    }}
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex items-center gap-2">
