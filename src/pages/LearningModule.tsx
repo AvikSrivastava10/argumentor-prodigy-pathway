@@ -19,6 +19,7 @@ import {
   Video
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import ArgumentBuilder from '@/components/ArgumentBuilder';
 
 const LearningModule = () => {
   const { moduleId } = useParams();
@@ -236,24 +237,7 @@ const LearningModule = () => {
                           <p className="text-gray-700 mb-4">
                             Drag and drop the components to build a strong argument structure:
                           </p>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                              <h4 className="font-medium">Available Components:</h4>
-                              <div className="space-y-2">
-                                {['Claim', 'Evidence', 'Warrant', 'Impact'].map((component) => (
-                                  <div key={component} className="p-3 bg-white border border-gray-200 rounded-lg cursor-move hover:shadow-md transition-shadow">
-                                    {component}
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                            <div className="space-y-2">
-                              <h4 className="font-medium">Argument Structure:</h4>
-                              <div className="min-h-40 p-4 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50">
-                                <p className="text-gray-500 text-center">Drop components here</p>
-                              </div>
-                            </div>
-                          </div>
+                          <ArgumentBuilder />
                         </div>
                       </div>
                     )}
